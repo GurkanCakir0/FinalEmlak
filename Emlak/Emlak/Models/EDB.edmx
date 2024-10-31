@@ -1,0 +1,858 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="EDB1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cephe">
+          <Key>
+            <PropertyRef Name="Cepheid" />
+          </Key>
+          <Property Name="Cepheid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cyon" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ilanlar">
+          <Key>
+            <PropertyRef Name="Ilanid" />
+          </Key>
+          <Property Name="Ilanid" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ilanbasligi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ilanaciklama" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Fiyat" Type="money" Nullable="false" />
+          <Property Name="odasayi" Type="int" Nullable="false" />
+          <Property Name="salonsayi" Type="int" Nullable="false" />
+          <Property Name="banyosayi" Type="int" Nullable="false" />
+          <Property Name="brut" Type="float" Nullable="false" />
+          <Property Name="net" Type="int" Nullable="false" />
+          <Property Name="EvIsinmaid" Type="int" Nullable="false" />
+          <Property Name="binayas" Type="int" Nullable="false" />
+          <Property Name="Katid" Type="int" Nullable="false" />
+          <Property Name="binakatsayi" Type="int" Nullable="false" />
+          <Property Name="konutsekil1" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="esyali" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="EvYakid" Type="int" Nullable="false" />
+          <Property Name="EvYapid" Type="int" Nullable="false" />
+          <Property Name="EvKDid" Type="int" Nullable="false" />
+          <Property Name="aidat" Type="money" Nullable="false" />
+          <Property Name="takasmi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="sitemi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="EvCepheid" Type="int" Nullable="false" />
+          <Property Name="EvTapid" Type="int" Nullable="false" />
+          <Property Name="kira" Type="money" Nullable="false" />
+          <Property Name="Evsehirid" Type="int" Nullable="false" />
+          <Property Name="ilcenere" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="mahnere" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="resim" Type="nvarchar" MaxLength="50" />
+          <Property Name="satilikirami" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="EvYTid" Type="int" Nullable="false" />
+          <Property Name="Evuid" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="kredi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="goruntu" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Iller">
+          <Key>
+            <PropertyRef Name="sehirid" />
+          </Key>
+          <Property Name="sehirid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="il" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Isinma">
+          <Key>
+            <PropertyRef Name="Isinmaid" />
+          </Key>
+          <Property Name="Isinmaid" Type="int" Nullable="false" />
+          <Property Name="Itur" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Kat">
+          <Key>
+            <PropertyRef Name="Katid" />
+          </Key>
+          <Property Name="Katid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Bkat" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Kullanim">
+          <Key>
+            <PropertyRef Name="KDid" />
+          </Key>
+          <Property Name="KDid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Durumu" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tapu">
+          <Key>
+            <PropertyRef Name="Tapid" />
+          </Key>
+          <Property Name="Tapid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tapum" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Uyeler">
+          <Key>
+            <PropertyRef Name="uid" />
+          </Key>
+          <Property Name="uid" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="adsoyad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="sifre" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="eposta" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="uyeadmin" Type="int" Nullable="false" />
+          <Property Name="kadi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="foto" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Yakit">
+          <Key>
+            <PropertyRef Name="Yakid" />
+          </Key>
+          <Property Name="Yakid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="YTuru" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Yapi">
+          <Key>
+            <PropertyRef Name="Yapid" />
+          </Key>
+          <Property Name="Yapid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="YapDurumu" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Yorumlar">
+          <Key>
+            <PropertyRef Name="YorumId" />
+          </Key>
+          <Property Name="YorumId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="YorumIcerik" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="uid" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Ilanid" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tarih" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="YTipi">
+          <Key>
+            <PropertyRef Name="YTid" />
+          </Key>
+          <Property Name="YTid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Yapitipi" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Ilanlar_ToCep">
+          <End Role="Cephe" Type="Self.Cephe" Multiplicity="1" />
+          <End Role="Ilanlar" Type="Self.Ilanlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cephe">
+              <PropertyRef Name="Cepheid" />
+            </Principal>
+            <Dependent Role="Ilanlar">
+              <PropertyRef Name="EvCepheid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ilanlar_ToIsi">
+          <End Role="Isinma" Type="Self.Isinma" Multiplicity="1" />
+          <End Role="Ilanlar" Type="Self.Ilanlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Isinma">
+              <PropertyRef Name="Isinmaid" />
+            </Principal>
+            <Dependent Role="Ilanlar">
+              <PropertyRef Name="EvIsinmaid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ilanlar_ToIuid">
+          <End Role="Uyeler" Type="Self.Uyeler" Multiplicity="1" />
+          <End Role="Ilanlar" Type="Self.Ilanlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uyeler">
+              <PropertyRef Name="uid" />
+            </Principal>
+            <Dependent Role="Ilanlar">
+              <PropertyRef Name="Evuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ilanlar_ToKat">
+          <End Role="Kat" Type="Self.Kat" Multiplicity="1" />
+          <End Role="Ilanlar" Type="Self.Ilanlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kat">
+              <PropertyRef Name="Katid" />
+            </Principal>
+            <Dependent Role="Ilanlar">
+              <PropertyRef Name="Katid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ilanlar_ToKdur">
+          <End Role="Kullanim" Type="Self.Kullanim" Multiplicity="1" />
+          <End Role="Ilanlar" Type="Self.Ilanlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanim">
+              <PropertyRef Name="KDid" />
+            </Principal>
+            <Dependent Role="Ilanlar">
+              <PropertyRef Name="EvKDid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ilanlar_Tosehir">
+          <End Role="Iller" Type="Self.Iller" Multiplicity="1" />
+          <End Role="Ilanlar" Type="Self.Ilanlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Iller">
+              <PropertyRef Name="sehirid" />
+            </Principal>
+            <Dependent Role="Ilanlar">
+              <PropertyRef Name="Evsehirid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ilanlar_ToTapu">
+          <End Role="Tapu" Type="Self.Tapu" Multiplicity="1" />
+          <End Role="Ilanlar" Type="Self.Ilanlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tapu">
+              <PropertyRef Name="Tapid" />
+            </Principal>
+            <Dependent Role="Ilanlar">
+              <PropertyRef Name="EvTapid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ilanlar_ToYakit">
+          <End Role="Yakit" Type="Self.Yakit" Multiplicity="1" />
+          <End Role="Ilanlar" Type="Self.Ilanlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Yakit">
+              <PropertyRef Name="Yakid" />
+            </Principal>
+            <Dependent Role="Ilanlar">
+              <PropertyRef Name="EvYakid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ilanlar_ToYapi">
+          <End Role="Yapi" Type="Self.Yapi" Multiplicity="1" />
+          <End Role="Ilanlar" Type="Self.Ilanlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Yapi">
+              <PropertyRef Name="Yapid" />
+            </Principal>
+            <Dependent Role="Ilanlar">
+              <PropertyRef Name="EvYapid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ilanlar_ToYtip">
+          <End Role="YTipi" Type="Self.YTipi" Multiplicity="1" />
+          <End Role="Ilanlar" Type="Self.Ilanlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="YTipi">
+              <PropertyRef Name="YTid" />
+            </Principal>
+            <Dependent Role="Ilanlar">
+              <PropertyRef Name="EvYTid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Yorumlar_ToYilanid">
+          <End Role="Ilanlar" Type="Self.Ilanlar" Multiplicity="0..1" />
+          <End Role="Yorumlar" Type="Self.Yorumlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ilanlar">
+              <PropertyRef Name="Ilanid" />
+            </Principal>
+            <Dependent Role="Yorumlar">
+              <PropertyRef Name="Ilanid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Yorumlar_ToYuyem">
+          <End Role="Uyeler" Type="Self.Uyeler" Multiplicity="1" />
+          <End Role="Yorumlar" Type="Self.Yorumlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uyeler">
+              <PropertyRef Name="uid" />
+            </Principal>
+            <Dependent Role="Yorumlar">
+              <PropertyRef Name="uid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EDB1ModelStoreContainer">
+          <EntitySet Name="Cephe" EntityType="Self.Cephe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ilanlar" EntityType="Self.Ilanlar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Iller" EntityType="Self.Iller" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Isinma" EntityType="Self.Isinma" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kat" EntityType="Self.Kat" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kullanim" EntityType="Self.Kullanim" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tapu" EntityType="Self.Tapu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Uyeler" EntityType="Self.Uyeler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Yakit" EntityType="Self.Yakit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Yapi" EntityType="Self.Yapi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Yorumlar" EntityType="Self.Yorumlar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="YTipi" EntityType="Self.YTipi" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Ilanlar_ToCep" Association="Self.FK_Ilanlar_ToCep">
+            <End Role="Cephe" EntitySet="Cephe" />
+            <End Role="Ilanlar" EntitySet="Ilanlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ilanlar_ToIsi" Association="Self.FK_Ilanlar_ToIsi">
+            <End Role="Isinma" EntitySet="Isinma" />
+            <End Role="Ilanlar" EntitySet="Ilanlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ilanlar_ToIuid" Association="Self.FK_Ilanlar_ToIuid">
+            <End Role="Uyeler" EntitySet="Uyeler" />
+            <End Role="Ilanlar" EntitySet="Ilanlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ilanlar_ToKat" Association="Self.FK_Ilanlar_ToKat">
+            <End Role="Kat" EntitySet="Kat" />
+            <End Role="Ilanlar" EntitySet="Ilanlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ilanlar_ToKdur" Association="Self.FK_Ilanlar_ToKdur">
+            <End Role="Kullanim" EntitySet="Kullanim" />
+            <End Role="Ilanlar" EntitySet="Ilanlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ilanlar_Tosehir" Association="Self.FK_Ilanlar_Tosehir">
+            <End Role="Iller" EntitySet="Iller" />
+            <End Role="Ilanlar" EntitySet="Ilanlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ilanlar_ToTapu" Association="Self.FK_Ilanlar_ToTapu">
+            <End Role="Tapu" EntitySet="Tapu" />
+            <End Role="Ilanlar" EntitySet="Ilanlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ilanlar_ToYakit" Association="Self.FK_Ilanlar_ToYakit">
+            <End Role="Yakit" EntitySet="Yakit" />
+            <End Role="Ilanlar" EntitySet="Ilanlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ilanlar_ToYapi" Association="Self.FK_Ilanlar_ToYapi">
+            <End Role="Yapi" EntitySet="Yapi" />
+            <End Role="Ilanlar" EntitySet="Ilanlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ilanlar_ToYtip" Association="Self.FK_Ilanlar_ToYtip">
+            <End Role="YTipi" EntitySet="YTipi" />
+            <End Role="Ilanlar" EntitySet="Ilanlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Yorumlar_ToYilanid" Association="Self.FK_Yorumlar_ToYilanid">
+            <End Role="Ilanlar" EntitySet="Ilanlar" />
+            <End Role="Yorumlar" EntitySet="Yorumlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Yorumlar_ToYuyem" Association="Self.FK_Yorumlar_ToYuyem">
+            <End Role="Uyeler" EntitySet="Uyeler" />
+            <End Role="Yorumlar" EntitySet="Yorumlar" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EDB1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="EDB1Entities7" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cephe" EntityType="EDB1Model.Cephe" />
+          <EntitySet Name="Ilanlar" EntityType="EDB1Model.Ilanlar" />
+          <EntitySet Name="Iller" EntityType="EDB1Model.Iller" />
+          <EntitySet Name="Isinma" EntityType="EDB1Model.Isinma" />
+          <EntitySet Name="Kat" EntityType="EDB1Model.Kat" />
+          <EntitySet Name="Kullanim" EntityType="EDB1Model.Kullanim" />
+          <EntitySet Name="Tapu" EntityType="EDB1Model.Tapu" />
+          <EntitySet Name="Uyeler" EntityType="EDB1Model.Uyeler" />
+          <EntitySet Name="Yakit" EntityType="EDB1Model.Yakit" />
+          <EntitySet Name="Yapi" EntityType="EDB1Model.Yapi" />
+          <EntitySet Name="Yorumlar" EntityType="EDB1Model.Yorumlar" />
+          <EntitySet Name="YTipi" EntityType="EDB1Model.YTipi" />
+          <AssociationSet Name="FK_Ilanlar_ToCep" Association="EDB1Model.FK_Ilanlar_ToCep">
+            <End Role="Cephe" EntitySet="Cephe" />
+            <End Role="Ilanlar" EntitySet="Ilanlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ilanlar_ToIsi" Association="EDB1Model.FK_Ilanlar_ToIsi">
+            <End Role="Isinma" EntitySet="Isinma" />
+            <End Role="Ilanlar" EntitySet="Ilanlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ilanlar_ToIuid" Association="EDB1Model.FK_Ilanlar_ToIuid">
+            <End Role="Uyeler" EntitySet="Uyeler" />
+            <End Role="Ilanlar" EntitySet="Ilanlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ilanlar_ToKat" Association="EDB1Model.FK_Ilanlar_ToKat">
+            <End Role="Kat" EntitySet="Kat" />
+            <End Role="Ilanlar" EntitySet="Ilanlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ilanlar_ToKdur" Association="EDB1Model.FK_Ilanlar_ToKdur">
+            <End Role="Kullanim" EntitySet="Kullanim" />
+            <End Role="Ilanlar" EntitySet="Ilanlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ilanlar_Tosehir" Association="EDB1Model.FK_Ilanlar_Tosehir">
+            <End Role="Iller" EntitySet="Iller" />
+            <End Role="Ilanlar" EntitySet="Ilanlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ilanlar_ToTapu" Association="EDB1Model.FK_Ilanlar_ToTapu">
+            <End Role="Tapu" EntitySet="Tapu" />
+            <End Role="Ilanlar" EntitySet="Ilanlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ilanlar_ToYakit" Association="EDB1Model.FK_Ilanlar_ToYakit">
+            <End Role="Yakit" EntitySet="Yakit" />
+            <End Role="Ilanlar" EntitySet="Ilanlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ilanlar_ToYapi" Association="EDB1Model.FK_Ilanlar_ToYapi">
+            <End Role="Yapi" EntitySet="Yapi" />
+            <End Role="Ilanlar" EntitySet="Ilanlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ilanlar_ToYtip" Association="EDB1Model.FK_Ilanlar_ToYtip">
+            <End Role="YTipi" EntitySet="YTipi" />
+            <End Role="Ilanlar" EntitySet="Ilanlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Yorumlar_ToYilanid" Association="EDB1Model.FK_Yorumlar_ToYilanid">
+            <End Role="Ilanlar" EntitySet="Ilanlar" />
+            <End Role="Yorumlar" EntitySet="Yorumlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Yorumlar_ToYuyem" Association="EDB1Model.FK_Yorumlar_ToYuyem">
+            <End Role="Uyeler" EntitySet="Uyeler" />
+            <End Role="Yorumlar" EntitySet="Yorumlar" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Cephe">
+          <Key>
+            <PropertyRef Name="Cepheid" />
+          </Key>
+          <Property Name="Cepheid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cyon" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Ilanlar" Relationship="EDB1Model.FK_Ilanlar_ToCep" FromRole="Cephe" ToRole="Ilanlar" />
+        </EntityType>
+        <EntityType Name="Ilanlar">
+          <Key>
+            <PropertyRef Name="Ilanid" />
+          </Key>
+          <Property Name="Ilanid" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ilanbasligi" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ilanaciklama" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Fiyat" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="odasayi" Type="Int32" Nullable="false" />
+          <Property Name="salonsayi" Type="Int32" Nullable="false" />
+          <Property Name="banyosayi" Type="Int32" Nullable="false" />
+          <Property Name="brut" Type="Double" Nullable="false" />
+          <Property Name="net" Type="Int32" Nullable="false" />
+          <Property Name="EvIsinmaid" Type="Int32" Nullable="false" />
+          <Property Name="binayas" Type="Int32" Nullable="false" />
+          <Property Name="Katid" Type="Int32" Nullable="false" />
+          <Property Name="binakatsayi" Type="Int32" Nullable="false" />
+          <Property Name="konutsekil1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="esyali" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EvYakid" Type="Int32" Nullable="false" />
+          <Property Name="EvYapid" Type="Int32" Nullable="false" />
+          <Property Name="EvKDid" Type="Int32" Nullable="false" />
+          <Property Name="aidat" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="takasmi" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sitemi" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EvCepheid" Type="Int32" Nullable="false" />
+          <Property Name="EvTapid" Type="Int32" Nullable="false" />
+          <Property Name="kira" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Evsehirid" Type="Int32" Nullable="false" />
+          <Property Name="ilcenere" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="mahnere" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="resim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="satilikirami" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EvYTid" Type="Int32" Nullable="false" />
+          <Property Name="Evuid" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kredi" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="goruntu" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Cephe" Relationship="EDB1Model.FK_Ilanlar_ToCep" FromRole="Ilanlar" ToRole="Cephe" />
+          <NavigationProperty Name="Isinma" Relationship="EDB1Model.FK_Ilanlar_ToIsi" FromRole="Ilanlar" ToRole="Isinma" />
+          <NavigationProperty Name="Uyeler" Relationship="EDB1Model.FK_Ilanlar_ToIuid" FromRole="Ilanlar" ToRole="Uyeler" />
+          <NavigationProperty Name="Kat" Relationship="EDB1Model.FK_Ilanlar_ToKat" FromRole="Ilanlar" ToRole="Kat" />
+          <NavigationProperty Name="Kullanim" Relationship="EDB1Model.FK_Ilanlar_ToKdur" FromRole="Ilanlar" ToRole="Kullanim" />
+          <NavigationProperty Name="Iller" Relationship="EDB1Model.FK_Ilanlar_Tosehir" FromRole="Ilanlar" ToRole="Iller" />
+          <NavigationProperty Name="Tapu" Relationship="EDB1Model.FK_Ilanlar_ToTapu" FromRole="Ilanlar" ToRole="Tapu" />
+          <NavigationProperty Name="Yakit" Relationship="EDB1Model.FK_Ilanlar_ToYakit" FromRole="Ilanlar" ToRole="Yakit" />
+          <NavigationProperty Name="Yapi" Relationship="EDB1Model.FK_Ilanlar_ToYapi" FromRole="Ilanlar" ToRole="Yapi" />
+          <NavigationProperty Name="YTipi" Relationship="EDB1Model.FK_Ilanlar_ToYtip" FromRole="Ilanlar" ToRole="YTipi" />
+          <NavigationProperty Name="Yorumlar" Relationship="EDB1Model.FK_Yorumlar_ToYilanid" FromRole="Ilanlar" ToRole="Yorumlar" />
+        </EntityType>
+        <EntityType Name="Iller">
+          <Key>
+            <PropertyRef Name="sehirid" />
+          </Key>
+          <Property Name="sehirid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="il" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Ilanlar" Relationship="EDB1Model.FK_Ilanlar_Tosehir" FromRole="Iller" ToRole="Ilanlar" />
+        </EntityType>
+        <EntityType Name="Isinma">
+          <Key>
+            <PropertyRef Name="Isinmaid" />
+          </Key>
+          <Property Name="Isinmaid" Type="Int32" Nullable="false" />
+          <Property Name="Itur" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Ilanlar" Relationship="EDB1Model.FK_Ilanlar_ToIsi" FromRole="Isinma" ToRole="Ilanlar" />
+        </EntityType>
+        <EntityType Name="Kat">
+          <Key>
+            <PropertyRef Name="Katid" />
+          </Key>
+          <Property Name="Katid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Bkat" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Ilanlar" Relationship="EDB1Model.FK_Ilanlar_ToKat" FromRole="Kat" ToRole="Ilanlar" />
+        </EntityType>
+        <EntityType Name="Kullanim">
+          <Key>
+            <PropertyRef Name="KDid" />
+          </Key>
+          <Property Name="KDid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Durumu" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Ilanlar" Relationship="EDB1Model.FK_Ilanlar_ToKdur" FromRole="Kullanim" ToRole="Ilanlar" />
+        </EntityType>
+        <EntityType Name="Tapu">
+          <Key>
+            <PropertyRef Name="Tapid" />
+          </Key>
+          <Property Name="Tapid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tapum" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Ilanlar" Relationship="EDB1Model.FK_Ilanlar_ToTapu" FromRole="Tapu" ToRole="Ilanlar" />
+        </EntityType>
+        <EntityType Name="Uyeler">
+          <Key>
+            <PropertyRef Name="uid" />
+          </Key>
+          <Property Name="uid" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="adsoyad" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sifre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="eposta" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="uyeadmin" Type="Int32" Nullable="false" />
+          <Property Name="kadi" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="foto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Ilanlar" Relationship="EDB1Model.FK_Ilanlar_ToIuid" FromRole="Uyeler" ToRole="Ilanlar" />
+          <NavigationProperty Name="Yorumlar" Relationship="EDB1Model.FK_Yorumlar_ToYuyem" FromRole="Uyeler" ToRole="Yorumlar" />
+        </EntityType>
+        <EntityType Name="Yakit">
+          <Key>
+            <PropertyRef Name="Yakid" />
+          </Key>
+          <Property Name="Yakid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="YTuru" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Ilanlar" Relationship="EDB1Model.FK_Ilanlar_ToYakit" FromRole="Yakit" ToRole="Ilanlar" />
+        </EntityType>
+        <EntityType Name="Yapi">
+          <Key>
+            <PropertyRef Name="Yapid" />
+          </Key>
+          <Property Name="Yapid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="YapDurumu" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Ilanlar" Relationship="EDB1Model.FK_Ilanlar_ToYapi" FromRole="Yapi" ToRole="Ilanlar" />
+        </EntityType>
+        <EntityType Name="Yorumlar">
+          <Key>
+            <PropertyRef Name="YorumId" />
+          </Key>
+          <Property Name="YorumId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="YorumIcerik" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="uid" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ilanid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tarih" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Ilanlar" Relationship="EDB1Model.FK_Yorumlar_ToYilanid" FromRole="Yorumlar" ToRole="Ilanlar" />
+          <NavigationProperty Name="Uyeler" Relationship="EDB1Model.FK_Yorumlar_ToYuyem" FromRole="Yorumlar" ToRole="Uyeler" />
+        </EntityType>
+        <EntityType Name="YTipi">
+          <Key>
+            <PropertyRef Name="YTid" />
+          </Key>
+          <Property Name="YTid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Yapitipi" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Ilanlar" Relationship="EDB1Model.FK_Ilanlar_ToYtip" FromRole="YTipi" ToRole="Ilanlar" />
+        </EntityType>
+        <Association Name="FK_Ilanlar_ToCep">
+          <End Type="EDB1Model.Cephe" Role="Cephe" Multiplicity="1" />
+          <End Type="EDB1Model.Ilanlar" Role="Ilanlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cephe">
+              <PropertyRef Name="Cepheid" />
+            </Principal>
+            <Dependent Role="Ilanlar">
+              <PropertyRef Name="EvCepheid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ilanlar_ToIsi">
+          <End Type="EDB1Model.Isinma" Role="Isinma" Multiplicity="1" />
+          <End Type="EDB1Model.Ilanlar" Role="Ilanlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Isinma">
+              <PropertyRef Name="Isinmaid" />
+            </Principal>
+            <Dependent Role="Ilanlar">
+              <PropertyRef Name="EvIsinmaid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ilanlar_ToIuid">
+          <End Type="EDB1Model.Uyeler" Role="Uyeler" Multiplicity="1" />
+          <End Type="EDB1Model.Ilanlar" Role="Ilanlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uyeler">
+              <PropertyRef Name="uid" />
+            </Principal>
+            <Dependent Role="Ilanlar">
+              <PropertyRef Name="Evuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ilanlar_ToKat">
+          <End Type="EDB1Model.Kat" Role="Kat" Multiplicity="1" />
+          <End Type="EDB1Model.Ilanlar" Role="Ilanlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kat">
+              <PropertyRef Name="Katid" />
+            </Principal>
+            <Dependent Role="Ilanlar">
+              <PropertyRef Name="Katid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ilanlar_ToKdur">
+          <End Type="EDB1Model.Kullanim" Role="Kullanim" Multiplicity="1" />
+          <End Type="EDB1Model.Ilanlar" Role="Ilanlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanim">
+              <PropertyRef Name="KDid" />
+            </Principal>
+            <Dependent Role="Ilanlar">
+              <PropertyRef Name="EvKDid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ilanlar_Tosehir">
+          <End Type="EDB1Model.Iller" Role="Iller" Multiplicity="1" />
+          <End Type="EDB1Model.Ilanlar" Role="Ilanlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Iller">
+              <PropertyRef Name="sehirid" />
+            </Principal>
+            <Dependent Role="Ilanlar">
+              <PropertyRef Name="Evsehirid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ilanlar_ToTapu">
+          <End Type="EDB1Model.Tapu" Role="Tapu" Multiplicity="1" />
+          <End Type="EDB1Model.Ilanlar" Role="Ilanlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tapu">
+              <PropertyRef Name="Tapid" />
+            </Principal>
+            <Dependent Role="Ilanlar">
+              <PropertyRef Name="EvTapid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ilanlar_ToYakit">
+          <End Type="EDB1Model.Yakit" Role="Yakit" Multiplicity="1" />
+          <End Type="EDB1Model.Ilanlar" Role="Ilanlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Yakit">
+              <PropertyRef Name="Yakid" />
+            </Principal>
+            <Dependent Role="Ilanlar">
+              <PropertyRef Name="EvYakid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ilanlar_ToYapi">
+          <End Type="EDB1Model.Yapi" Role="Yapi" Multiplicity="1" />
+          <End Type="EDB1Model.Ilanlar" Role="Ilanlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Yapi">
+              <PropertyRef Name="Yapid" />
+            </Principal>
+            <Dependent Role="Ilanlar">
+              <PropertyRef Name="EvYapid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ilanlar_ToYtip">
+          <End Type="EDB1Model.YTipi" Role="YTipi" Multiplicity="1" />
+          <End Type="EDB1Model.Ilanlar" Role="Ilanlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="YTipi">
+              <PropertyRef Name="YTid" />
+            </Principal>
+            <Dependent Role="Ilanlar">
+              <PropertyRef Name="EvYTid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Yorumlar_ToYilanid">
+          <End Type="EDB1Model.Ilanlar" Role="Ilanlar" Multiplicity="0..1" />
+          <End Type="EDB1Model.Yorumlar" Role="Yorumlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ilanlar">
+              <PropertyRef Name="Ilanid" />
+            </Principal>
+            <Dependent Role="Yorumlar">
+              <PropertyRef Name="Ilanid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Yorumlar_ToYuyem">
+          <End Type="EDB1Model.Uyeler" Role="Uyeler" Multiplicity="1" />
+          <End Type="EDB1Model.Yorumlar" Role="Yorumlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uyeler">
+              <PropertyRef Name="uid" />
+            </Principal>
+            <Dependent Role="Yorumlar">
+              <PropertyRef Name="uid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EDB1ModelStoreContainer" CdmEntityContainer="EDB1Entities7">
+          <EntitySetMapping Name="Cephe">
+            <EntityTypeMapping TypeName="EDB1Model.Cephe">
+              <MappingFragment StoreEntitySet="Cephe">
+                <ScalarProperty Name="cyon" ColumnName="cyon" />
+                <ScalarProperty Name="Cepheid" ColumnName="Cepheid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ilanlar">
+            <EntityTypeMapping TypeName="EDB1Model.Ilanlar">
+              <MappingFragment StoreEntitySet="Ilanlar">
+                <ScalarProperty Name="goruntu" ColumnName="goruntu" />
+                <ScalarProperty Name="kredi" ColumnName="kredi" />
+                <ScalarProperty Name="Evuid" ColumnName="Evuid" />
+                <ScalarProperty Name="EvYTid" ColumnName="EvYTid" />
+                <ScalarProperty Name="satilikirami" ColumnName="satilikirami" />
+                <ScalarProperty Name="resim" ColumnName="resim" />
+                <ScalarProperty Name="mahnere" ColumnName="mahnere" />
+                <ScalarProperty Name="ilcenere" ColumnName="ilcenere" />
+                <ScalarProperty Name="Evsehirid" ColumnName="Evsehirid" />
+                <ScalarProperty Name="kira" ColumnName="kira" />
+                <ScalarProperty Name="EvTapid" ColumnName="EvTapid" />
+                <ScalarProperty Name="EvCepheid" ColumnName="EvCepheid" />
+                <ScalarProperty Name="sitemi" ColumnName="sitemi" />
+                <ScalarProperty Name="takasmi" ColumnName="takasmi" />
+                <ScalarProperty Name="aidat" ColumnName="aidat" />
+                <ScalarProperty Name="EvKDid" ColumnName="EvKDid" />
+                <ScalarProperty Name="EvYapid" ColumnName="EvYapid" />
+                <ScalarProperty Name="EvYakid" ColumnName="EvYakid" />
+                <ScalarProperty Name="esyali" ColumnName="esyali" />
+                <ScalarProperty Name="konutsekil1" ColumnName="konutsekil1" />
+                <ScalarProperty Name="binakatsayi" ColumnName="binakatsayi" />
+                <ScalarProperty Name="Katid" ColumnName="Katid" />
+                <ScalarProperty Name="binayas" ColumnName="binayas" />
+                <ScalarProperty Name="EvIsinmaid" ColumnName="EvIsinmaid" />
+                <ScalarProperty Name="net" ColumnName="net" />
+                <ScalarProperty Name="brut" ColumnName="brut" />
+                <ScalarProperty Name="banyosayi" ColumnName="banyosayi" />
+                <ScalarProperty Name="salonsayi" ColumnName="salonsayi" />
+                <ScalarProperty Name="odasayi" ColumnName="odasayi" />
+                <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+                <ScalarProperty Name="ilanaciklama" ColumnName="ilanaciklama" />
+                <ScalarProperty Name="ilanbasligi" ColumnName="ilanbasligi" />
+                <ScalarProperty Name="Ilanid" ColumnName="Ilanid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Iller">
+            <EntityTypeMapping TypeName="EDB1Model.Iller">
+              <MappingFragment StoreEntitySet="Iller">
+                <ScalarProperty Name="il" ColumnName="il" />
+                <ScalarProperty Name="sehirid" ColumnName="sehirid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Isinma">
+            <EntityTypeMapping TypeName="EDB1Model.Isinma">
+              <MappingFragment StoreEntitySet="Isinma">
+                <ScalarProperty Name="Itur" ColumnName="Itur" />
+                <ScalarProperty Name="Isinmaid" ColumnName="Isinmaid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kat">
+            <EntityTypeMapping TypeName="EDB1Model.Kat">
+              <MappingFragment StoreEntitySet="Kat">
+                <ScalarProperty Name="Bkat" ColumnName="Bkat" />
+                <ScalarProperty Name="Katid" ColumnName="Katid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kullanim">
+            <EntityTypeMapping TypeName="EDB1Model.Kullanim">
+              <MappingFragment StoreEntitySet="Kullanim">
+                <ScalarProperty Name="Durumu" ColumnName="Durumu" />
+                <ScalarProperty Name="KDid" ColumnName="KDid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tapu">
+            <EntityTypeMapping TypeName="EDB1Model.Tapu">
+              <MappingFragment StoreEntitySet="Tapu">
+                <ScalarProperty Name="Tapum" ColumnName="Tapum" />
+                <ScalarProperty Name="Tapid" ColumnName="Tapid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Uyeler">
+            <EntityTypeMapping TypeName="EDB1Model.Uyeler">
+              <MappingFragment StoreEntitySet="Uyeler">
+                <ScalarProperty Name="foto" ColumnName="foto" />
+                <ScalarProperty Name="kadi" ColumnName="kadi" />
+                <ScalarProperty Name="uyeadmin" ColumnName="uyeadmin" />
+                <ScalarProperty Name="eposta" ColumnName="eposta" />
+                <ScalarProperty Name="sifre" ColumnName="sifre" />
+                <ScalarProperty Name="adsoyad" ColumnName="adsoyad" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Yakit">
+            <EntityTypeMapping TypeName="EDB1Model.Yakit">
+              <MappingFragment StoreEntitySet="Yakit">
+                <ScalarProperty Name="YTuru" ColumnName="YTuru" />
+                <ScalarProperty Name="Yakid" ColumnName="Yakid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Yapi">
+            <EntityTypeMapping TypeName="EDB1Model.Yapi">
+              <MappingFragment StoreEntitySet="Yapi">
+                <ScalarProperty Name="YapDurumu" ColumnName="YapDurumu" />
+                <ScalarProperty Name="Yapid" ColumnName="Yapid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Yorumlar">
+            <EntityTypeMapping TypeName="EDB1Model.Yorumlar">
+              <MappingFragment StoreEntitySet="Yorumlar">
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Ilanid" ColumnName="Ilanid" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="YorumIcerik" ColumnName="YorumIcerik" />
+                <ScalarProperty Name="YorumId" ColumnName="YorumId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="YTipi">
+            <EntityTypeMapping TypeName="EDB1Model.YTipi">
+              <MappingFragment StoreEntitySet="YTipi">
+                <ScalarProperty Name="Yapitipi" ColumnName="Yapitipi" />
+                <ScalarProperty Name="YTid" ColumnName="YTid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,43 @@
+<div class="container">
+  <mat-form-field class="mt-5" appearance="outline" style="width:100% ;">
+    <input matInput placeholder="Aranacak Bir Değer Giriniz" (keyup)="Filterele($event)">
+  </mat-form-field>
+  <mat-table [dataSource]="dataSource" matSort>
+
+    <ng-container matColumnDef="foto">
+      <mat-header-cell *matHeaderCellDef> Fotoğraf
+      </mat-header-cell>
+      <mat-cell *matCellDef="let kayit">
+        <img src="{{apiservis.siteUrl + 'Dosyalar/'+ kayit.foto}}" style="width: 100px;cursor: pointer;"
+        matTooltip="Fotoğraf Güncellemek İçin Tıklayınız" (click)="FotoGuncelle(kayit)" />
+
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="adsoyad">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Ad Soyad</mat-header-cell>
+      <mat-cell *matCellDef="let kayit">{{kayit.adsoyad}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="eposta">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>E-Posta</mat-header-cell>
+      <mat-cell *matCellDef="let kayit">{{kayit.eposta}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="uyeadmin">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Uye Admin</mat-header-cell>
+      <mat-cell *matCellDef="let kayit">{{kayit.uyeadmin}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="kadi">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Kullanıcı Adı</mat-header-cell>
+      <mat-cell *matCellDef="let kayit">{{kayit.kadi}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="Detay">
+      <mat-header-cell *matHeaderCellDef>Düzenle/Sil/Güncelle</mat-header-cell>
+      <mat-cell *matCellDef="let kayit">
+        <button mat-icon-button color="primary" matTooltip="Düzenle"><mat-icon aria-label="label" (click)="uyeduzenler(kayit)">edit</mat-icon></button>
+        <button mat-icon-button color="primary" matTooltip="Sil"><mat-icon aria-label="label" (click)="UyeSil(kayit)">delete</mat-icon></button>
+      </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+  <mat-paginator [pageSizeOptions]="[5,10,25,50,100]" showFirstLastButtons=""></mat-paginator>
+</div>

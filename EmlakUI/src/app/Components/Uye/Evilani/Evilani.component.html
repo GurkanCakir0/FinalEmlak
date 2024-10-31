@@ -1,0 +1,52 @@
+<div class="container">
+  <button mat-fab matTooltip="Cephe Ekle" color="primary" (click)="EVEkle()">
+    <mat-icon aria-label="label" >add</mat-icon>
+  </button>
+  <mat-form-field appearance="outline" style="width:100% ;">
+    <input matInput placeholder="Aranacak Bir Değer Giriniz" (keyup)="Filterele($event)">
+  </mat-form-field>
+  <mat-table [dataSource]="datasource" matSort>
+    <ng-container matColumnDef="resim">
+      <mat-header-cell *matHeaderCellDef> Fotoğraf</mat-header-cell>
+      <mat-cell *matCellDef="let kayit1">
+        <img src="{{apiservis.siteUrl + 'Dosyalar/'+ kayit1.resim}}" style="width: 100px;cursor: pointer;"
+        matTooltip="Fotoğraf Güncellemek İçin Tıklayınız" (click)="FotoGuncelle(kayit1)" />
+
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="ilanbasligi">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>İlan Başlığı</mat-header-cell>
+      <mat-cell *matCellDef="let kayit">{{kayit.ilanbasligi}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="ilanaciklama">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>İlan Açıklaması</mat-header-cell>
+      <mat-cell *matCellDef="let kayit">{{kayit.ilanaciklama}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="satilikirami">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Satılık/Kiralık</mat-header-cell>
+      <mat-cell *matCellDef="let kayit">{{kayit.satilikirami}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="Evsehirid">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Şehir</mat-header-cell>
+      <mat-cell *matCellDef="let kayit">{{kayit.Illerbilgi.il}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="EvCepheid">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Cephe</mat-header-cell>
+      <mat-cell *matCellDef="let kayit">{{kayit.Cephebilgi.cyon}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="Fiyat">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Fiyat</mat-header-cell>
+      <mat-cell *matCellDef="let kayit">{{kayit.Fiyat}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="Detay">
+      <mat-header-cell *matHeaderCellDef>Düzenle/Sil/Güncelle</mat-header-cell>
+      <mat-cell *matCellDef="let ilan">
+        <button mat-icon-button color="primary" matTooltip="Düzenle"><mat-icon aria-label="label" (click)="EVDuzenle(ilan)">edit</mat-icon></button>
+        <button mat-icon-button color="primary" matTooltip="Sil"><mat-icon aria-label="label" (click)="EVSil(ilan)">delete</mat-icon></button>
+      </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+  <mat-paginator [pageSizeOptions]="[5,10,25,50,100]" showFirstLastButtons=""></mat-paginator>
+</div>

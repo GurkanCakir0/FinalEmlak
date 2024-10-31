@@ -1,0 +1,21 @@
+<div class="container " style="margin:auto ;">
+  <div class="row body">
+    <H1 class="mt-5 py-2" style="margin-left:120px; font-size: xx-large;">OTURUM AÇ</H1>  
+    <div>
+      <mat-form-field appearance="outline" style="width: 50%; ">
+        <mat-label>Kullanıcı Adı</mat-label>
+        <input matInput placeholder="Kullanıcı Adı" type="text" #kadi>
+      </mat-form-field>
+    </div>
+
+    <div class="">
+      <mat-form-field appearance="outline" style="width: 50%;">
+        <mat-label>Sifre</mat-label>
+        <input matInput placeholder="Sifre" type="password" #sifre>
+      </mat-form-field>
+    </div>
+
+    
+    <button mat-raised-button color="primary" style="width:50% ;" (click)="OturumAc(kadi.value,sifre.value)">Oturum AÇ</button>
+  </div>
+</div>

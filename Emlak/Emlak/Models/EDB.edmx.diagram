@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8129e926337746e49df177a0674b1aa3" Name="Diagram1" ZoomLevel="16">
+        <EntityTypeShape EntityType="EDB1Model.Cephe" Width="1.5" PointX="0.75" PointY="8.375" />
+        <EntityTypeShape EntityType="EDB1Model.Ilanlar" Width="1.5" PointX="3" PointY="1.25" />
+        <EntityTypeShape EntityType="EDB1Model.Iller" Width="1.5" PointX="0.75" PointY="20.125" />
+        <EntityTypeShape EntityType="EDB1Model.Isinma" Width="1.5" PointX="0.75" PointY="24.75" />
+        <EntityTypeShape EntityType="EDB1Model.Kat" Width="1.5" PointX="0.75" PointY="17.75" />
+        <EntityTypeShape EntityType="EDB1Model.Kullanim" Width="1.5" PointX="0.75" PointY="27.125" />
+        <EntityTypeShape EntityType="EDB1Model.Tapu" Width="1.5" PointX="0.75" PointY="10.75" />
+        <EntityTypeShape EntityType="EDB1Model.Uyeler" Width="1.5" PointX="0.75" PointY="4.625" />
+        <EntityTypeShape EntityType="EDB1Model.Yakit" Width="1.5" PointX="0.75" PointY="13.125" />
+        <EntityTypeShape EntityType="EDB1Model.Yapi" Width="1.5" PointX="0.75" PointY="15.375" />
+        <EntityTypeShape EntityType="EDB1Model.Yorumlar" Width="1.5" PointX="5.25" PointY="4.875" />
+        <EntityTypeShape EntityType="EDB1Model.YTipi" Width="1.5" PointX="0.75" PointY="22.5" />
+        <AssociationConnector Association="EDB1Model.FK_Ilanlar_ToCep" />
+        <AssociationConnector Association="EDB1Model.FK_Ilanlar_ToIsi" />
+        <AssociationConnector Association="EDB1Model.FK_Ilanlar_ToIuid" />
+        <AssociationConnector Association="EDB1Model.FK_Ilanlar_ToKat" />
+        <AssociationConnector Association="EDB1Model.FK_Ilanlar_ToKdur" />
+        <AssociationConnector Association="EDB1Model.FK_Ilanlar_Tosehir" />
+        <AssociationConnector Association="EDB1Model.FK_Ilanlar_ToTapu" />
+        <AssociationConnector Association="EDB1Model.FK_Ilanlar_ToYakit" />
+        <AssociationConnector Association="EDB1Model.FK_Ilanlar_ToYapi" />
+        <AssociationConnector Association="EDB1Model.FK_Ilanlar_ToYtip" />
+        <AssociationConnector Association="EDB1Model.FK_Yorumlar_ToYilanid" />
+        <AssociationConnector Association="EDB1Model.FK_Yorumlar_ToYuyem" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

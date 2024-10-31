@@ -1,0 +1,192 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <button mat-icon-button class="mt-4" style="margin:-80px;" (click)="geridon()">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+    </div>
+    <div class="col-md-6">
+      <h1 class="mt-5" style="font-size:xx-large;">İlan Detayları</h1>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-2" style="margin-left:-80px;">
+      <img   src="assets\home.png" alt="" style="width: 300px; height:350px;">
+    </div>
+<div class="col-md-5" style="margin-left:20px;">
+  <table *ngIf="secilan" class="tablo mt-4">
+    <tr>
+        <td class="col-md-5 baslık">İlan Başlığı</td>
+        <th class="col-md-7 alt" >: {{secilan.ilanbasligi}}</th>
+    </tr>
+    <tr>
+        <td class="col-md-5 baslık">Fiyat</td>
+        <th class="col-md-7 alt">: {{secilan.Fiyat}}</th>
+    </tr>
+    <tr>
+        <td class="col-md-5 baslık">Aidat</td>
+        <th class="col-md-7 alt">: {{secilan.aidat}}</th>
+    </tr>
+    <tr>
+      <td class="col-md-5 baslık">Brut M2</td>
+      <th class="col-md-7 alt">: {{secilan.brut}}</th>
+  </tr>
+  <tr>
+    <td class="col-md-5 baslık">Net M2</td>
+    <th class="col-md-7 alt">: {{secilan.net}}</th>
+  </tr>
+  <tr>
+    <td class="col-md-5 baslık">Isınma Tipi</td>
+    <th class="col-md-7 alt">: {{secilan.EvIsinma}}</th>
+  </tr>
+  <tr>
+    <td class="col-md-5 baslık" >Bina Yaşı</td>
+    <th class="col-md-7 alt">: {{secilan.binayas}}</th>
+  </tr>
+  <tr>
+    <td class="col-md-5 baslık" >Bulunduğu Kat</td>
+    <th class="col-md-7 alt" >: {{secilan.Katb}}</th>
+  </tr>
+  <tr>
+    <td class="col-md-5 baslık">Bina Kat Sayısı</td>
+    <th class="col-md-7 alt">: {{secilan.binakatsayi}}</th>
+  </tr>
+  <tr>
+    <td class="col-md-5 baslık">Konut Şekili</td>
+    <th class="col-md-7 alt">: {{secilan.konutsekil1}}</th>
+  </tr>
+  <tr>
+    <td class="col-md-5 baslık">Takas</td>
+    <th class="col-md-7 alt">: {{secilan.takasmi}}</th>
+  </tr>
+  <tr>
+    <td class="col-md-5 baslık">Site</td>
+    <th class="col-md-7 alt">: {{secilan.sitemi}}</th>
+  </tr>
+
+  <tr>
+    <td class="col-md-5 baslık">Tapu</td>
+    <th class="col-md-7 alt">: {{secilan.EvTapidb}}</th>
+  </tr>
+  <tr>
+    <td class="col-md-5 baslık">Kullanım Durumu</td>
+    <th class="col-md-7 alt">: {{secilan.EvKDidb}}</th>
+  </tr>
+  <tr>
+    <td class="col-md-5 baslık">Yakıt Tipi</td>
+    <th class="col-md-7 alt">: {{secilan.EvYakit}}</th>
+  </tr>
+    <br>
+    <br>
+    <br>
+</table>
+</div>
+<div class="col-md-5">
+  <table *ngIf="secilan" class="tablo mt-4">
+    <tr>
+      <td class="col-md-5 baslık">Kira</td>
+      <th class="col-md-7 alt">: {{secilan.kira}}</th>
+    </tr>
+    <tr>
+      <td class="col-md-5 baslık">Cephe</td>
+      <th class="col-md-7 alt">: {{secilan.EvCepheidb}}</th>
+    </tr>
+    <tr>
+        <td class="col-md-5 baslık">Oda Sayısı</td>
+        <th class="col-md-7 alt">: {{secilan.odasayi}}</th>
+    </tr>
+    <tr>
+        <td class="col-md-5 baslık">Salon Sayısı</td>
+        <th class="col-md-7 alt">: {{secilan.salonsayi}}</th>
+    </tr>
+    <tr>
+        <td class="col-md-5 baslık">Banyo Sayısı</td>
+        <th class="col-md-7 alt">: {{secilan.banyosayi}}</th>
+    </tr>
+    <tr>
+      <td class="col-md-5 baslık">Bulunduğu Şehir</td>
+      <th class="col-md-7 alt">: {{secilan.Evsehiridb}}</th>
+  </tr>
+  <tr>
+      <td class="col-md-5 baslık">İlçe</td>
+      <th class="col-md-7 alt">: {{secilan.ilcenere}}</th>
+  </tr>
+  <tr>
+      <td class="col-md-5 baslık">Mahalle</td>
+      <th class="col-md-7 alt">: {{secilan.mahnere}}</th>
+  </tr>
+  <tr>
+    <td class="col-md-5 baslık">Yayın Tipi</td>
+    <th class="col-md-7 alt">: {{secilan.satilikirami}}</th>
+  </tr>
+  <tr>
+    <td class="col-md-5 baslık">Yapı Tipi</td>
+    <th class="col-md-7 alt">: {{secilan.EvYTidb}}</th>
+  </tr>
+  <tr>
+  <td class="col-md-5 baslık">Kredi</td>
+  <th class="col-md-7 alt">: {{secilan.kredi}}</th>
+  </tr>
+  <tr>
+  <td class="col-md-5 baslık">Görüntülü Arama</td>
+  <th class="col-md-7 alt">: {{secilan.goruntu}}</th>
+  </tr>
+  <tr>
+    <td class="col-md-5 baslık">Yapı Durumu</td>
+    <th class="col-md-7 alt">: {{secilan.EvYapidb}}</th>
+    </tr>
+  <tr>
+    <td class="col-md-5 baslık">Paylaşan</td>
+    <th class="col-md-7 alt">: {{secilan.Evuidb}}</th>
+  </tr>
+  <tr>
+    <td class="col-md-5 baslık">İlan Açıklaması</td>
+    <th class="col-md-7 alt">: {{secilan.ilanaciklama}}</th>
+  </tr>
+    <br>
+    <br>
+    <br>
+</table>
+</div>
+<div class="container">
+  <div class="row">
+    <div>
+      <button style="width:100% ;" mat-raised-button color="primary"  [routerLink]="['/uye',secilan?.Evuid]">Detay</button>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<h1 style="margin-top: 50px;">Yorumlar</h1>
+<hr>
+<h3 style="color:red" *ngIf="!apiservis.OturumK()">Yorum Yazabilmek İçin <a href="#"
+    [routerLink]="['/login']">Oturum Açınız</a></h3>
+    <div class="container" *ngIf="apiservis.OturumK()">
+      <div class="row">
+          <mat-form-field appearance="outline">
+            <mat-label >Yorumunuz</mat-label>
+            <textarea style="width:100% ;"  matInput placeholder="Yorumunuz" #yorumMetni></textarea>
+          </mat-form-field>
+       <button mat-raised-button color="primary" (click)="YorumEkle(yorumMetni.value)">Yorum Ekle</button>
+      </div>
+    </div>
+<div class="py-3" *ngFor="let yorum of yorumlar">
+  <mat-card>
+    <mat-card-title>{{yorum.KullaniciAdi}}</mat-card-title>
+    <p>{{yorum.YorumIcerik}}</p>
+    <mat-card-actions>
+      <button mat-button>{{yorum.Tarih | date:'dd.MM.yyyy HH:mm:ss'}}</button>
+      <button *ngIf="yorum.uid == uid" (click)="YorumSil(yorum)" mat-raised-button color="primary"
+        mat-button>Sil</button>
+      <button *ngIf="apiservis.yetkiKontrol(['Admin'])" (click)="YorumSil(yorum)" mat-raised-button color="primary"
+        mat-button>Admin Yorum Sil</button>
+
+
+    </mat-card-actions>
+  </mat-card>
+</div>

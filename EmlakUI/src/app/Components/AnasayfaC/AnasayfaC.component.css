@@ -1,0 +1,30 @@
+.combo{
+    height: 68px;
+    width: 100px;
+    border: none;
+    outline: none;
+    background: #222;
+    color: white;
+    font-size: 18px;
+}
+.deneme{
+    margin-left: 450px;
+    margin-top: 200px;
+}
+.input2[type="text"]{
+    height: 68px;
+    width: 400px;
+    border: none;
+    outline: none;
+    background: #222;
+    color: white;
+    font-size: 18px;
+}
+.ara{
+    margin-bottom: 200px;
+}
+.kenarakay1{
+    position: relative;
+
+    left: 130px;
+}

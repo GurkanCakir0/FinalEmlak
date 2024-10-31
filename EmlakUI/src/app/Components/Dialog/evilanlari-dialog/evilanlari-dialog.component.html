@@ -1,0 +1,191 @@
+<mat-toolbar color="primary" class="mat-elevation-z6">
+  <span>{{dialogBaslik}}</span>
+</mat-toolbar>
+<div class="container">
+  <form [formGroup]="frm">
+
+    <mat-form-field appearance="outline">
+      <mat-label>İlan Başlığı</mat-label>
+      <input matInput placeholder="İlan Başlığı" formControlName="ilanbasligi" name="ilanbasligi" type="text" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>İlan Açıklama</mat-label>
+      <input matInput placeholder="İlan Açıklama" formControlName="ilanaciklama" name="ilanaciklama" type="text" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" >
+      <mat-label>Yayın Tipi</mat-label>
+      <mat-select  formControlName="satilikirami" name="satilikirami" required>
+        <mat-option *ngFor="let yayint of yayin"  [value]="yayint">{{yayint}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Fiyat</mat-label>
+      <input matInput placeholder="Fiyat" formControlName="Fiyat" name="Fiyat" type="number" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Oda Sayısı</mat-label>
+      <input matInput placeholder="Oda Sayısı" formControlName="odasayi" name="odasayi" type="number" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Salon Sayısı</mat-label>
+      <input matInput placeholder="Salon Sayısı" formControlName="salonsayi" name="salonsayi" type="number" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Banyo Sayısı</mat-label>
+      <input matInput placeholder="Banyo Sayısı" formControlName="banyosayi" name="banyosayi" type="number" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Brüt M2</mat-label>
+      <input matInput placeholder="Brüt M2" formControlName="brut" name="brut" type="number" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Net M2</mat-label>
+      <input matInput placeholder="Net M2" formControlName="net" name="net" type="number" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" >
+      <mat-label>Isınma Tipi</mat-label>
+      <mat-select  formControlName="EvIsinmaid" name="EvIsinmaid" required>
+        <mat-option *ngFor="let isi of secisinma" [value]="isi.Isinmaid">{{isi.Itur}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Bina Yaşı</mat-label>
+      <input matInput placeholder="Bina Yaşı" formControlName="binayas" name="binayas" type="number" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" >
+      <mat-label>Bulunduğu Kat</mat-label>
+      <mat-select formControlName="Katid" name="Katid" required>
+        <mat-option *ngFor="let bulk of kat" name="Katid" [value]="bulk.Katid">{{bulk.Bkat}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Bina Kat Sayısı</mat-label>
+      <input matInput placeholder="Bina Kat Sayısı" formControlName="binakatsayi" name="binakatsayi" type="number" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" >
+      <mat-label>Krediye Uygun</mat-label>
+      <mat-select  formControlName="kredi" name="kredi" required>
+        <mat-option *ngFor="let Krediye of kredim"  [value]="Krediye">{{Krediye}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" >
+      <mat-label>Görüntülü Arama İle Gezilebilir</mat-label>
+      <mat-select formControlName="goruntu" name="goruntu" required>
+        <mat-option *ngFor="let gor of goruntu"  [value]="gor">{{gor}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+    <mat-form-field appearance="fill" >
+      <mat-label>Konut Şekli</mat-label>
+      <mat-select formControlName="konutsekil1" name="konutsekil1" required>
+        <mat-option *ngFor="let konut of sekil"  [value]="konut">{{konut}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" >
+      <mat-label>Eşyalı</mat-label>
+      <mat-select formControlName="esyali" name="esyali" required>
+        <mat-option *ngFor="let esya of esyali"  [value]="esya">{{esya}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" >
+      <mat-label>Yakıt Tipi</mat-label>
+      <mat-select formControlName="EvYakid" name="EvYakid" required>
+        <mat-option *ngFor="let yak of yakitim"  [value]="yak.Yakid">{{yak.YTuru}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" >
+      <mat-label>Yapının Tipi</mat-label>
+      <mat-select formControlName="EvYTid" name="EvYTid" required>
+        <mat-option *ngFor="let tipi of yapt"  [value]="tipi.YTid">{{tipi.Yapitipi}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" >
+      <mat-label>Yapının Durumu</mat-label>
+      <mat-select formControlName="EvYapid" name="EvYapid" required>
+        <mat-option *ngFor="let ypdurum of yapidur"  [value]="ypdurum.Yapid">{{ypdurum.YapDurumu}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" >
+      <mat-label>Kullanım Durumu</mat-label>
+      <mat-select  formControlName="EvKDid" name="EvKDid" required>
+        <mat-option *ngFor="let kdu of durum"  [value]="kdu.KDid">{{kdu.Durumu}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" required>
+      <mat-label>Aidat</mat-label>
+      <input matInput placeholder="Aidat" formControlName="aidat" name="aidat" type="number" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" >
+      <mat-label>Takas</mat-label>
+      <mat-select formControlName="takasmi" name="takasmi" required>
+        <mat-option *ngFor="let takas of tks"  [value]="takas">{{takas}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" >
+      <mat-label>Site İçinde</mat-label>
+      <mat-select formControlName="sitemi" name="sitemi" required>
+        <mat-option *ngFor="let site of sitemi"  [value]="site">{{site}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+   <mat-form-field appearance="fill" >
+      <mat-label>Cephe</mat-label>
+      <mat-select formControlName="EvCepheid" name="EvCepheid" required>
+        <mat-option *ngFor="let cphy of cepheler"  [value]="cphy.Cepheid">{{cphy.cyon}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" >
+      <mat-label>Tapu Durumu</mat-label>
+      <mat-select  formControlName="EvTapid" name="EvTapid" required>
+        <mat-option *ngFor="let tp of tapular"  [value]="tp.Tapid">{{tp.Tapum}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Kira</mat-label>
+      <input matInput placeholder="Kira" formControlName="kira" name="kira" type="number" required>
+    </mat-form-field>
+    
+    <mat-form-field appearance="fill" >
+      <mat-label>İl</mat-label>
+      <mat-select  formControlName="Evsehirid" name="Evsehirid" required>
+        <mat-option *ngFor="let sehir of sehirler"  [value]="sehir.sehirid">{{sehir.il}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>İlçe</mat-label>
+      <input matInput placeholder="İlçe" formControlName="ilcenere" name="ilcenere" type="text" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Mahalle</mat-label>
+      <input matInput placeholder="Mahalle" formControlName="mahnere" name="mahnere" type="text" required>
+    </mat-form-field>
+
+  </form>
+</div>
+<p>&nbsp;</p>
+<button mat-raised-button color="primary" (click)="dialogRef.close(frm.value)" [disabled]="frm.invalid">Kaydet</button>&nbsp;
+<button mat-raised-button color="warn" (click)="dialogRef.close()">İptal</button>&nbsp;

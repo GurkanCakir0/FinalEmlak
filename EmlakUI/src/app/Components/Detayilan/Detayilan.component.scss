@@ -1,0 +1,40 @@
+.baslık{
+    font-weight:200;
+    font-size: 20px;
+    padding-left: 5em;
+    color: white;
+    
+}
+.alt{
+    font-weight: 300;
+    font-size: 20px;
+    padding:2%;
+    padding-left: 5em;
+    color: white;
+}
+table tr th{
+    position: relative;
+}
+table tr th::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 350px;
+    background:#777777;
+}
+table tr td{
+    position:relative;
+    color: white;
+}
+table tr td::before{
+    content: '';
+    margin-left: 100px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 250px;
+    background:#777777;
+}

@@ -1,0 +1,17 @@
+
+<div class="container-fluid">
+  <div class="row mt-5 mb-5">
+    <div class="col-md-4" *ngFor="let Evilanim of evim">
+      <div class="card mt-4" style="background-color:#303030;">
+        <div class="card-body">
+          <h2 class="card-title"  style="color:white">{{Evilanim?.ilanbasligi}}</h2>
+          <img [src]="apiservis.siteUrl+'/Dosyalar/'+Evilanim?.resim" alt="" style="height: 300px; width: 100%; object-fit:cover;">
+          <p class="mt-3 ilanp"  style="color:white">{{Evilanim?.ilanaciklama}} {{Evilanim?.Fiyat}} ₺ {{Evilanim?.satilikirami}}</p>
+        </div>
+        <div class="card-footer">
+          <button mat-raised-button color="primary" class="btn btn-md" style="margin-inline-end:500px; width:100% ;" [routerLink]="['/detay',Evilanim.Ilanid]">Detay</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
